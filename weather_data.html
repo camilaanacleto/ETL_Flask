@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Climáticos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dados Climáticos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Data da Coleta</th>
+                    <th>Cidade</th>
+                    <th>Temperatura (°C)</th>
+                    <th>Umidade (%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in weather_data %}
+                <tr>
+                    <td>{{ entry.id }}</td>
+                    <td>{{ entry.ingestion_date }}</td>
+                    <td>{{ entry.city }}</td>
+                    <td>{{ entry.temperature }}</td>
+                    <td>{{ entry.humidity }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button onclick="window.location.href='/'">Voltar ao Início</button>
+    </div>
+</body>
+</html>
